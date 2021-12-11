@@ -6,6 +6,7 @@ import { default as ContentStyles } from "./Content.module.scss";
 import { StoreContext } from "../../store/StoreProvider";
 
 import Courses from "../Courses/Courses";
+import UserCourses from "../UserCourses/UserCourses";
 
 const style = bemCssModules(ContentStyles);
 
@@ -18,7 +19,7 @@ const Content = () => {
   const isAdmin = user?.accessLevel === ADMIN_TYPE;
 
   const ifUserLogged = isUserLogged && (
-    <Route exact path="/my-courses" element={<p>Moje kursy</p>} />
+    <Route exact path="/my-courses" element={<UserCourses />} />
   );
 
   const ifAdminLogged = isAdmin && (
