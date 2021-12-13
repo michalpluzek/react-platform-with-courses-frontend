@@ -7,6 +7,7 @@ import { StoreContext } from "../../store/StoreProvider";
 
 import Courses from "../Courses/Courses";
 import UserCourses from "../UserCourses/UserCourses";
+import AdminPanel from "../AdminPanel/AdminPanel";
 
 const style = bemCssModules(ContentStyles);
 
@@ -23,7 +24,7 @@ const Content = () => {
   );
 
   const ifAdminLogged = isAdmin && (
-    <Route exact path="/manage-courses" element={<p>Zarządzanie kursami</p>} />
+    <Route exact path="/manage-courses" element={<AdminPanel />} />
   );
 
   return (
